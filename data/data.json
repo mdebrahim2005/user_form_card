@@ -1,0 +1,57 @@
+
+[
+  {
+    "id": 1,
+    "name": "Rahim Ahmed",
+    "email": "rahim@example.com",
+    "phone": "01712345678",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2026-10-01T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Karim Hasan",
+    "email": "karim@example.com",
+    "phone": "01812345678",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2026-10-02T11:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "email": "nusrat@example.com",
+    "phone": "01912345678",
+    "role": "user",
+    "status": "inactive",
+    "createdAt": "2026-10-03T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Sakib Hossain",
+    "email": "sakib@example.com",
+    "phone": "01612345678",
+    "role": "admin",
+    "status": "active",
+    "createdAt": "2026-10-04T14:20:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Ayesha Akter",
+    "email": "ayesha@example.com",
+    "phone": "01312345678",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2026-10-05T16:45:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Tanvir Islam",
+    "email": "tanvir@example.com",
+    "phone": "01412345678",
+    "role": "user",
+    "status": "pending",
+    "createdAt": "2026-10-06T08:10:00Z"
+  }
+]
