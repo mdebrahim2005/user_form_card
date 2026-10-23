@@ -1,52 +1,38 @@
 "use client";
-import { useState } from "react";
-// import path from "path";
-// import fs from "fs";
-import usersData from "../../../data/data.json";
-// import { Button } from "@heroui/react";
-import { Plus } from "lucide-react";
-import AddUsers  from "../addusers/page.jsx";
 
-// export const dynamic = "force-dynamic";
+import { useState } from "react";
+import initialUsers from "../../../data/data.json";
+import AddUsers from "../addusers/page.jsx";
+import { createUser } from "../lib/actions";
 
 export default function Users() {
+  const [users, setUsers] = useState(initialUsers);
 
-  // const newUsersData = path.join(process.cwd(), "data", "data.json");
-  // let uesersData = [];
-  // try {
-  //   if (fs.existsSync(newUsersData)) {
-  //     const data = fs.readFileSync(newUsersData, "utf8");
-  //     uesersData = JSON.parse(data);
-  //   }
-  // } catch (error) {
-  //   console.error("Error reading users data:", error);
-  // }
 
-  const [showForm, setShowForm] = useState(false);
-
+  const handleCreateUser = async (formData) => {
+    const res = await createUser(formData);
+    if (res?.ok && res?.user) {
+      setUsers((prev) => [...prev, res.user]);
+    }
+  };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-12">
       <div className="text-center mb-10">
-        
         <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
-          Our Users {usersData.length}
+          Our Users {users.length}
         </h2>
         <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
           Meet the community members and partners.
         </p>
 
-         <div className="mt-6 flex justify-center gap-4">
-               
-          <AddUsers />
-         </div>
-          
-
-          
+        <div className="mt-6 flex justify-center gap-4">
+          <AddUsers createUser={handleCreateUser} />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {usersData && usersData.map((user, index) => (
+        {users.map((user, index) => (
           <div
             key={user.id || index}
             className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between"
@@ -61,7 +47,7 @@ export default function Users() {
                     {user.name || "Anonymous User"}
                   </h3>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    {user.role || user.designation || "Member"}
+                    {user.role || "Member"}
                   </p>
                 </div>
               </div>
@@ -79,7 +65,6 @@ export default function Users() {
                     <span>{user.phone}</span>
                   </p>
                 )}
-               
               </div>
             </div>
 
