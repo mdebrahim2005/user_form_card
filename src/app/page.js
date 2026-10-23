@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import HomeComponent from "./componet/home/page";
 
 export default function Home() {

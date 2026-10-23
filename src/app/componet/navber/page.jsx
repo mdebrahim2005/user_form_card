@@ -49,7 +49,8 @@ export default function NavbarComponent() {
             <Link href="/users">Users</Link>
           </li>
           <li>
-            <Button variant="primary">Sign Up</Button>
+             <Link href="/signup"> <Button variant="primary">Sign Up</Button></Link>
+           
           </li>
           <WithIcons />
           

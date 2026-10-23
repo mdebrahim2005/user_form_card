@@ -1,15 +1,48 @@
-
+"use client";
+import { useState } from "react";
+// import path from "path";
+// import fs from "fs";
 import usersData from "../../../data/data.json";
+// import { Button } from "@heroui/react";
+import { Plus } from "lucide-react";
+import AddUsers  from "../addusers/page.jsx";
+
+// export const dynamic = "force-dynamic";
+
 export default function Users() {
+
+  // const newUsersData = path.join(process.cwd(), "data", "data.json");
+  // let uesersData = [];
+  // try {
+  //   if (fs.existsSync(newUsersData)) {
+  //     const data = fs.readFileSync(newUsersData, "utf8");
+  //     uesersData = JSON.parse(data);
+  //   }
+  // } catch (error) {
+  //   console.error("Error reading users data:", error);
+  // }
+
+  const [showForm, setShowForm] = useState(false);
+
+
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-12">
       <div className="text-center mb-10">
+        
         <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           Our Users {usersData.length}
         </h2>
         <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
           Meet the community members and partners.
         </p>
+
+         <div className="mt-6 flex justify-center gap-4">
+               
+          <AddUsers />
+         </div>
+          
+
+          
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
