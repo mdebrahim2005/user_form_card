@@ -70,5 +70,14 @@
     "status": "active",
     "id": 8,
     "createdAt": "2026-10-23T13:19:14.531Z"
+  },
+  {
+    "name": "Md Ebrahim",
+    "email": "ebrahimislam3232@gmail.com",
+    "phone": "01605973315",
+    "role": "admin",
+    "status": "active",
+    "id": 9,
+    "createdAt": "2026-10-24T09:34:28.535Z"
   }
 ]
